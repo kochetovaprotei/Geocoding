@@ -22,3 +22,5 @@ text = fr.read()
 fr.close()
 
 print(text)
+
+

@@ -1,7 +1,3 @@
-# import requests
-#
-# response = requests.get('https://api.github.com')
-
 
 stuff = ['Ksu', 'Alex', 'Ivan']
 # print(stuff[0])

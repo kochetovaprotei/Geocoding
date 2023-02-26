@@ -1,6 +1,6 @@
 # list (выводится весь список строго по порядку)
 friends = ['Ross', 'Chandler', 'Joey', 'Monica', 'Phoebe', 'Rachel', 'Ross']
-print(friends)
+print(friends[0] + friends[5])
 
 # множество (выводится только одно значение, регистрозависимы)
 friends_2 = {'Ross', 'Chandler', 'Joey', 'Monica', 'Phoebe', 'Rachel', 'Ross'}
