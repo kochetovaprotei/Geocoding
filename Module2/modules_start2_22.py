@@ -9,8 +9,6 @@
 # print(user_random)
 
 
-import modules_hello2_22
-import math
 # from mod import math
 # print(math.pi)
 
