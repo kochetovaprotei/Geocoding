@@ -49,21 +49,29 @@ class NewLocation:
 
         """Удаляем 2,4 place_id локации из текстового файла"""
 
-        fr = open('file_place_id.txt', 'r')
-        place_id_for_delete_from_txt = fr.readlines()
-        list = place_id_for_delete_from_txt[]
-        fr.close()
+    def test_delete_location(self):
+        """Удаление локации"""
 
+        base_url = 'https://rahulshettyacademy.com'  # базовая url
+        key = '?key=qaclick123'  # параметр для всех запросов
         delete_resource = '/maps/api/place/delete/json'
+
         delete_url = base_url + delete_resource + key
         print(delete_url)
-        json_for_delete_new_location = {
-            "place_id": place_id_for_delete_from_txt
-        }
 
-        for i in list[1, 3]:
-            result_delete = requests.delete(delete_url, json=json_for_delete_new_location)
+        fr = open('file_place_id.txt', 'r')
+        list_of_all_place_id = fr.readlines()
+        print(list_of_all_place_id[0:3])
+        for i in list_of_all_place_id:
+            i = i + '\n'
+            json_for_delete_location = {
+                "place_id": i
+            }
+            result_delete = requests.delete(delete_url, json=json_for_delete_location)
             print(result_delete.text)
+
+        fr.close()
+
 
             # print('Status code: ' + str(result_delete.status_code))
             # assert 200 == result_delete.status_code
@@ -72,3 +80,4 @@ class NewLocation:
 
 send_get_to_read_place_id = NewLocation()
 send_get_to_read_place_id.test_post_new_location()
+send_get_to_read_place_id.test_delete_location()
