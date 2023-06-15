@@ -50,7 +50,8 @@ class NewLocation:
         """Удаляем 2,4 place_id локации из текстового файла"""
 
         fr = open('file_place_id.txt', 'r')
-        place_id_for_delete_from_txt = fr.read
+        place_id_for_delete_from_txt = fr.readlines()
+        list = place_id_for_delete_from_txt[]
         fr.close()
 
         delete_resource = '/maps/api/place/delete/json'
@@ -60,7 +61,7 @@ class NewLocation:
             "place_id": place_id_for_delete_from_txt
         }
 
-        for i in range(place_id_for_delete_from_txt[1, 3]):
+        for i in list[1, 3]:
             result_delete = requests.delete(delete_url, json=json_for_delete_new_location)
             print(result_delete.text)
 
