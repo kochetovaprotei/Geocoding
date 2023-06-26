@@ -1,5 +1,5 @@
 import requests
-from utils.http_methods import Http_methods
+from utils.http_methods import HttpMethods
 
 """Методы для прямого и обратного геокодирования"""
 
@@ -16,7 +16,7 @@ class NominatimApi():
         filename = 'search.php?'
         search_url = base_url + filename + query + format_json
         print(search_url)
-        result_search_by_name = Http_methods.search_and_reverse(search_url)
+        result_search_by_name = HttpMethods.search_and_reverse(search_url)
 
         print(result_search_by_name.text)
         return result_search_by_name
@@ -28,7 +28,7 @@ class NominatimApi():
         filename = 'reverse.php?'
         reverse_url = base_url + filename + query + format_json
         print(reverse_url)
-        result_reverse_by_coordinate = Http_methods.search_and_reverse(reverse_url)
+        result_reverse_by_coordinate = HttpMethods.search_and_reverse(reverse_url)
         print(result_reverse_by_coordinate.text)
         return result_reverse_by_coordinate
 
