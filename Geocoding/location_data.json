@@ -1,0 +1,17 @@
+{
+  "Test1": {
+    "query": "q=иорданский+пруд",
+    "expected_latitude": "59.99357575",
+    "expected_longitude": "30.3362719762346"
+    },
+  "Test2": {
+    "query": "q=артиллерийский+остров",
+    "expected_latitude": "59.95330165",
+    "expected_longitude": "30.314422577473174"
+    },
+  "Test3": {
+    "query": "q=тортилин+пруд",
+    "expected_latitude": "54.963702049999995",
+    "expected_longitude": "20.489817549516772"
+    }
+}
