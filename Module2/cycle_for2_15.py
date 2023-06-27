@@ -22,3 +22,5 @@ for f in friends[1:4]:
 for f in friends:
     print(len(f))   # длина символов каждого объкта из списка
 
+for f in friends[1,4]:
+    print(f)  # выведет троих начиная со второго

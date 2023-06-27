@@ -15,7 +15,7 @@ class GetCoordinatesByName:
         base_url = 'https://nominatim.openstreetmap.org/'
         get_resource = 'search.php?'
 
-        fr = open('location_data.json', 'r')
+        fr = open('utils/data_for_searching_by_name.json', 'r')
         query = fr.read()  # читаем строчку из файла
         fr.close()
 
