@@ -1,17 +1,28 @@
-import requests
-
-from utils.api import NominatimApi
+from utils.utils_for_file import GetDataFromFile
 import pytest
 
-"""Прямое и обратное кодирование"""
+"""Тест прямого кодирования"""
 
 
-@pytest.mark.parametrize("test_data", NominatimApi.search_by_name())
+@pytest.mark.parametrize("test_data", GetDataFromFile.data_from_first_file())
 def test_check_from_file(test_data):
     # NominatimApi.search_by_name()
     print(f"\nhttp - {test_data['input_data']}")
     print(f"\nresult - {test_data['result']}")
     pass
+
+
+"""Тест обратного кодирования"""
+
+# @pytest.mark.parametrize("test_data", GetDataFromFile.data_from_second_file())
+# def test_check_from_file(test_data):
+#     # NominatimApi.search_by_name()
+#     print(f"\nhttp - {test_data['input_data']}")
+#     print(f"\nresult - {test_data['result']}")
+#     pass
+
+
+
 
 # class TestNominatim():
 #

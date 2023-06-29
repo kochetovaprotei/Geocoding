@@ -40,14 +40,14 @@ class GetCoordinatesByName:
         print(check_info_lat)
         print(check_info_lon)
 
-        fr = open('expected_data.txt', 'r')
+        fr = open('utils/data_for_searching_by_coordinates.json', 'r')
         line_latitude = fr.readlines()  # читаем строчку из файла
         expected_latitude = line_latitude[0].rstrip()
         fr.close()
 
         assert check_info_lat == expected_latitude  # сравниваем значение ожидаемой ширины
 
-        fr = open('expected_data.txt', 'r')
+        fr = open('utils/data_for_searching_by_coordinates.json', 'r')
         line_longitude = fr.readlines()  # читаем строчку из файла
         expected_longitude = line_longitude[1].rstrip()
         fr.close()
@@ -57,3 +57,4 @@ class GetCoordinatesByName:
 
 find_location = GetCoordinatesByName()
 find_location.compare_coordinates_with_expected()
+
