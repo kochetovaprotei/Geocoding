@@ -8,15 +8,23 @@ import json
 # format_json = '&format=jsonv2'
 #
 #
-# class NominatimApi():
+class NominatimApi():
 #
 #     """Метод для прямого кодирования"""
 #     @staticmethod
 #     def search_by_name():
 
-with open('data_for_searching_by_name.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-    print(data[1])
+    @staticmethod
+    def search_by_name():
+        with open('/home/kochetova/PycharmProjects/pythonProject1/Geocoding/utils/data_for_searching_by_name.json', 'r',
+                  encoding='utf-8') as f:
+            temp_data = json.load(f)
+            data = []
+            for i in temp_data:
+                data.append(temp_data[i])
+            # print(data)
+        return data
+
 
     #     filename = 'search.php?'
     #     search_url = base_url + filename + query + format_json
