@@ -1,4 +1,5 @@
 from utils.utils_for_file import GetDataFromFile
+from utils.nominatimApi import NominatimApi
 import pytest
 
 """Тест прямого кодирования"""
@@ -9,6 +10,7 @@ def test_check_from_file(test_data):
     # NominatimApi.search_by_name()
     print(f"\nhttp - {test_data['input_data']}")
     print(f"\nresult - {test_data['result']}")
+    assert test_data['result'] == NominatimApi.search()
     pass
 
 

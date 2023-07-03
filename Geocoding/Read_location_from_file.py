@@ -15,12 +15,13 @@ class GetCoordinatesByName:
         base_url = 'https://nominatim.openstreetmap.org/'
         get_resource = 'search.php?'
 
-        fr = open('utils/data_for_searching_by_name.json', 'r')
-        query = fr.read()  # читаем строчку из файла
-        fr.close()
+        # fr = open('utils/data_for_searching_by_name.json', 'r')
+        # query = fr.read()  # читаем строчку из файла
+        # fr.close()
 
         format_json = '&format=jsonv2'
 
+        query = 'q=иорданский+пруд'
         get_url = base_url + get_resource + query + format_json
         print(get_url)
         result = requests.get(get_url)  # сохраняем тело ответа запроса get в переменную result
