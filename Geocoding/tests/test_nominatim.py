@@ -7,11 +7,16 @@ import pytest
 
 @pytest.mark.parametrize("test_data", GetDataFromFile.data_from_first_file())
 def test_check_from_file(test_data):
-    # NominatimApi.search_by_name()
     print(f"\nhttp - {test_data['input_data']}")
     print(f"\nresult - {test_data['result']}")
     print(test_data['result'])
     assert test_data['result'] == NominatimApi.search(query=test_data['input_data'])
+
+    # check_info_lat = NominatimApi.result_check_info_responce.get('lat')  # сохраняем значение ключа ширины
+    # check_info_lon = NominatimApi.result_check_info_responce.get('lon')  # сохраняем значение ключа долготы
+
+    print(check_info_lat)
+    print(check_info_lon)
     pass
 
 
