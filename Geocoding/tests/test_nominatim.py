@@ -10,7 +10,8 @@ def test_check_from_file(test_data):
     # NominatimApi.search_by_name()
     print(f"\nhttp - {test_data['input_data']}")
     print(f"\nresult - {test_data['result']}")
-    assert test_data['result'] == NominatimApi.search()
+    print(test_data['result'])
+    assert test_data['result'] == NominatimApi.search(query=test_data['input_data'])
     pass
 
 
