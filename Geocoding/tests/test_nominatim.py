@@ -1,52 +1,37 @@
-from utils.utils_for_file import GetDataFromFile
+from utils.utils_for_file import data_file
 from utils.nominatimApi import NominatimApi
 import pytest
 
 """Тест прямого кодирования"""
 
 
-@pytest.mark.parametrize("test_data", GetDataFromFile.data_from_first_file())
-def test_check_from_file(test_data):
-    print(f"\nhttp - {test_data['input_data']}")
-    print(f"\nresult - {test_data['result']}")
-    print(test_data['result'])
-    assert test_data['result'] == NominatimApi.search(query=test_data['input_data'])
+@pytest.mark.parametrize("test_data", data_file(file_path="utils/data_for_searching_by_name.json"))
+def test_check_from_name(test_data):
 
-    # check_info_lat = NominatimApi.result_check_info_responce.get('lat')  # сохраняем значение ключа ширины
-    # check_info_lon = NominatimApi.result_check_info_responce.get('lon')  # сохраняем значение ключа долготы
+    print(f"\nlatitude - {test_data['latitude']}")
+    print(f"\nlongitude - {test_data['longitude']}")  # <class 'dict'>
 
-    print(check_info_lat)
-    print(check_info_lon)
+    result = NominatimApi().search(query=test_data['input_data'])[0]  # <class 'dict'>
+
+    assert test_data['latitude'] == result['lat']
+    print('Совпала ширина')
+    assert test_data['longitude'] == result['lon']
+    print('Совпала долгота')
     pass
 
 
 """Тест обратного кодирования"""
 
-# @pytest.mark.parametrize("test_data", GetDataFromFile.data_from_second_file())
-# def test_check_from_file(test_data):
-#     # NominatimApi.search_by_name()
-#     print(f"\nhttp - {test_data['input_data']}")
-#     print(f"\nresult - {test_data['result']}")
-#     pass
 
+@pytest.mark.parametrize("test_data_coordinates", data_file(file_path="utils/data_for_searching_by_coordinates.json"))
+def test_check_from_coordinates(test_data_coordinates):
 
+    print(f"\naddress - {test_data_coordinates['address']}")  # <class 'dict'>
 
+    result = NominatimApi().reverse(query1=test_data_coordinates['latitude'], query2=test_data_coordinates['longitude'])
+    # <class 'dict'>
 
-# class TestNominatim():
-#
-#     @pytest.mark.parametrize('query, expected_latitude, expected_longitude', [('q=иорданский+пруд', 59.99357575, 30.3362719762346),
-#                                                                              ('q=артиллерийский+остров', 59.95330165, 30.314422577473174),
-#                                                                              ('q=тортилин+пруд', 54.963702049999995, 20.489817549516772)])
-#     def test_create_new_place(query, expected_latitude, expected_longitude):
-#
-#         print("Метод Get сравнение координат из ответа ")
-#         #  result_post: Response = Google_maps_api.create_new_place()  устаревшая конструкция
-#         result_search_by_name = NominatimApi.search_by_name()
-#         check_coordinates = result_search_by_name.json()
-#         check_info_lat = check_coordinates.get('lat')  # сохраняем значение ключа ширины
-#         check_info_lon = check_coordinates.get('lon')  # сохраняем значение ключа долготы
-#
-#         print(check_info_lat)
-#         print(check_info_lon)
-#
-#         assert
+    assert test_data_coordinates['address'] == result['display_name']
+    print(f"Совпал адрес: {result['display_name']}")
+
+    pass

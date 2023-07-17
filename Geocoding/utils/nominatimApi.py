@@ -1,57 +1,46 @@
 import requests
-from utils.utils_for_file import GetDataFromFile
-
-
-"""Методы для прямого и обратного геокодирования"""
-
-base_url = 'https://nominatim.openstreetmap.org/'
-format_json = '&format=jsonv2'
 
 
 class NominatimApi:
     headers = {'Content-Type': 'application/json'}
     cookie = ""
+    base_url = 'https://nominatim.openstreetmap.org/'
+    format_json = '&format=jsonv2'
 
-    @staticmethod  # чтобы не привязываться к конкретному классу
-    def search(query):
-        filename = 'search.php?'
-        print(query)
-        search_url = base_url + filename + str(query) + format_json
-        print(f'URL, который ищем:{search_url}')
-        result = requests.get(search_url, headers=NominatimApi.headers, cookies=NominatimApi.cookie)
+    """Метод отправки запроса"""
+
+    def get_request(self, url):
+        result = requests.get(url, headers=self.headers, cookies=self.cookie)
         result.encoding = 'utf-8'
-        # добавить проверки на статус код
-        result_check_info_responce = result.json()[0]   #  словарь
-
+        result_check_info_responce = result.json()
+        print('Status code: ' + str(result.status_code))
+        assert 200 == result.status_code
         print(f'Полный ответ из запроса по имени: {result_check_info_responce}')
 
         return result_check_info_responce
 
+    """Метод прямого нахождения по имени"""
 
-NominatimApi.search(query='q=иорданский+пруд')
+    # @staticmethod  # чтобы не привязываться к конкретному классу
+    def search(self, query):
+        filename = 'search.php?'
+        search_url = NominatimApi.base_url + filename + str(query) + NominatimApi.format_json
+        print(f'URL, который ищем:{search_url}')
 
+        result = self.get_request(url=search_url)
+        return result
 
-# @staticmethod  # чтобы не привязываться к конкретному классу
-# def reverse(url):
-#     result = requests.get(url, headers=NominatimApi.headers, cookies=NominatimApi.cookie)
-#     return result
+    # NominatimApi.search(query='q=иорданский+пруд')
 
+    """Метод обратного нахождения по координатам"""
 
-#     filename = 'search.php?'
-#     search_url = base_url + filename + query + format_json
-#     print(search_url)
-#     result_search_by_name = HttpMethods.search_and_reverse(search_url)
-#
-#     print(result_search_by_name.text)
-#     return result_search_by_name
-#
-# """Метод для обратного кодирования"""
-# @staticmethod
-# def reverse_by_coordinate(place_id):
-#
-#     filename = 'reverse.php?'
-#     reverse_url = base_url + filename + query + format_json
-#     print(reverse_url)
-#     result_reverse_by_coordinate = HttpMethods.search_and_reverse(reverse_url)
-#     print(result_reverse_by_coordinate.text)
-#     return result_reverse_by_coordinate
+    def reverse(self, query1, query2):
+        filename = 'reverse.php?'
+        reverse_url = NominatimApi.base_url + filename + 'lat=' + str(query1) + '&lon=' + str(query2) + \
+                      NominatimApi.format_json
+        print(f'URL, который ищем:{reverse_url}')
+
+        result = self.get_request(url=reverse_url)
+        return result
+
+# NominatimApi.reverse(query1='59.99357575', query2='30.3362719762346')
