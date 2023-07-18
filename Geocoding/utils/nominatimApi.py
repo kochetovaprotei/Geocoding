@@ -1,5 +1,5 @@
 import requests
-
+from utils.logger import Logger
 
 class NominatimApi:
     headers = {'Content-Type': 'application/json'}
@@ -10,30 +10,33 @@ class NominatimApi:
     """Метод отправки запроса"""
 
     def get_request(self, url):
+        # with allure.step("GET"):
+        Logger.add_request(url, method="GET")
         result = requests.get(url, headers=self.headers, cookies=self.cookie)
+        Logger.add_response(result)
         result.encoding = 'utf-8'
-        result_check_info_responce = result.json()
+        result_check_info_response = result.json()
 
         if result.status_code == 200:
             print('Status code: 200 OK')
         else:
             print(f'STATUS CODE: {str(result.status_code)}')
 
-        if not result_check_info_responce:
+        if not result_check_info_response:
             print("NO SEARCH RESULTS FOUND")
-        elif result_check_info_responce == {"error": "Unable to geocode"}:
+        elif result_check_info_response == {"error": "Unable to geocode"}:
             print("ERROR-MESSAGE:Unable to geocode")
-        elif result_check_info_responce == {"error": {"code": 400, "message":"Floating-point number expected for "
+        elif result_check_info_response == {"error": {"code": 400, "message":"Floating-point number expected for "
                                                                              "parameter 'lat'"}}:
             print("ERROR-MESSAGE:Floating-point number expected for parameter 'lat'")
         else:
-            print(f'Полный ответ из запроса по имени: {result_check_info_responce}')
+            print(f'Полный ответ из запроса по имени: {result_check_info_response}')
 
-        return result_check_info_responce
+        return result_check_info_response
 
     """Метод прямого нахождения по имени"""
 
-    # @staticmethod  # чтобы не привязываться к конкретному классу
+
     def search(self, query):
         search_url = NominatimApi.base_url + 'search.php?' + str(query) + NominatimApi.format_json
         print(f'URL, который ищем:{search_url}')
