@@ -1,0 +1,169 @@
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data0] (call)
+Time: 2023-07-18 19:20:02.006608
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=иорданский+пруд&format=jsonv2
+
+Response code: 200
+Response text: [{"place_id":115660083,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"way","osm_id":37912151,"boundingbox":["59.9933853","59.9937697","30.3359822","30.3366277"],"lat":"59.99357575","lon":"30.3362719762346","display_name":"Иорданский пруд, Лесной, округ Светлановское, Санкт-Петербург, Северо-Западный федеральный округ, Россия","place_rank":22,"category":"natural","type":"water","importance":0.4000099999999999}]
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:02 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data1] (call)
+Time: 2023-07-18 19:20:02.295670
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?&format=jsonv2
+
+Response code: 200
+Response text: []
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:02 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data2] (call)
+Time: 2023-07-18 19:20:02.810964
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=артиллерийский+остров&format=jsonv2
+
+Response code: 200
+Response text: [{"place_id":308161542,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":3297995,"boundingbox":["59.9517552","59.9553979","30.3097024","30.318388"],"lat":"59.95330165","lon":"30.314422577473174","display_name":"Артиллерийский остров, Петроградская сторона, округ Кронверкское, Санкт-Петербург, Северо-Западный федеральный округ, Россия","place_rank":17,"category":"place","type":"island","importance":0.49999782720980435}]
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:03 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data3] (call)
+Time: 2023-07-18 19:20:03.290554
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=тортилин+пруд&format=jsonv2
+
+Response code: 200
+Response text: [{"place_id":134229134,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"way","osm_id":115643407,"boundingbox":["54.962689","54.9647197","20.4891399","20.492278"],"lat":"54.963702049999995","lon":"20.489817549516772","display_name":"Тортилин пруд, Зеленоградск, Зеленоградский муниципальный округ, Калининградская область, Северо-Западный федеральный округ, 238530, Россия","place_rank":22,"category":"natural","type":"water","importance":0.4000099999999999}]
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:03 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data4] (call)
+Time: 2023-07-18 19:20:03.788226
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=Lille&format=jsonv2
+
+Response code: 200
+Response text: [{"place_id":307525040,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":58404,"boundingbox":["50.6008264","50.6612596","2.9679677","3.125725"],"lat":"50.6365654","lon":"3.0635282","display_name":"Lille, Nord, Hauts-de-France, France métropolitaine, France","place_rank":16,"category":"boundary","type":"administrative","importance":0.7632037863087654,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"},{"place_id":308018179,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":1282972,"boundingbox":["51.2069507","51.2989944","4.7613106","4.9072917"],"lat":"51.238218","lon":"4.8242404","display_name":"Lille, Turnhout, Antwerpen, Vlaanderen, 2275, België / Belgique / Belgien","place_rank":14,"category":"boundary","type":"administrative","importance":0.5652840956045764,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"},{"place_id":307950275,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":1643919,"boundingbox":["50.4416259","50.7946088","2.789132","3.3291133"],"lat":"50.61806395","lon":"3.045303691127442","display_name":"Lille, Nord, Hauts-de-France, France métropolitaine, France","place_rank":14,"category":"boundary","type":"administrative","importance":0.49050525079597795,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"},{"place_id":309173583,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":3875454,"boundingbox":["51.2244414","51.28671","4.778956","4.8602225"],"lat":"51.2556309","lon":"4.8275743490213285","display_name":"Lille, Turnhout, Antwerpen, 2275, België / Belgique / Belgien","place_rank":16,"category":"boundary","type":"administrative","importance":0.4600099999999999,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"},{"place_id":308833979,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":9402509,"boundingbox":["50.6008264","50.6571564","3.0168437","3.1040272"],"lat":"50.6290997","lon":"3.0597072679624127","display_name":"Lille, Nord, Hauts-de-France, France métropolitaine, France","place_rank":18,"category":"boundary","type":"administrative","importance":0.41001,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"},{"place_id":307315767,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"way","osm_id":1120767462,"boundingbox":["59.4276523","59.4339997","24.7058289","24.7246601"],"lat":"59.430798800000005","lon":"24.716903051277715","display_name":"Lille, Kristiine linnaosa, Tallinn, Harju maakond, Eesti","place_rank":20,"category":"place","type":"neighbourhood","importance":0.36000999999999994},{"place_id":40729134,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"node","osm_id":3282379739,"boundingbox":["44.1471697","44.1871697","2.010224","2.050224"],"lat":"44.1671697","lon":"2.030224","display_name":"Lille, Saint-Christophe, Albi, Tarn, Occitanie, France métropolitaine, 81190, France","place_rank":20,"category":"place","type":"hamlet","importance":0.36000999999999994,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_place_village.p.20.png"},{"place_id":73124724,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"node","osm_id":7006486544,"boundingbox":["46.7218347","46.7618347","0.2855063","0.3255063"],"lat":"46.7418347","lon":"0.3055063","display_name":"Lille, Vendeuvre-du-Poitou, Saint-Martin-la-Pallu, Poitiers, Vendeuvre-du-Poitou, Vienne, Nouvelle-Aquitaine, France métropolitaine, 86380, France","place_rank":20,"category":"place","type":"hamlet","importance":0.36000999999999994,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/poi_place_village.p.20.png"},{"place_id":244592,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"node","osm_id":158809287,"boundingbox":["47.2700412","47.2900412","-68.1197553","-68.0997553"],"lat":"47.2800412","lon":"-68.1097553","display_name":"Lille, Grand Isle, Aroostook County, Maine, 04746, United States","place_rank":20,"category":"place","type":"neighbourhood","importance":0.36000999999999994},{"place_id":235053433,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"way","osm_id":619871762,"boundingbox":["58.0487259","58.049112","8.0170508","8.0172981"],"lat":"58.048855","lon":"8.01715314939217","display_name":"Lille Svarten, Kristiansand, Agder, Norge","place_rank":20,"category":"place","type":"islet","importance":0.35000999999999993}]
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:04 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data5] (call)
+Time: 2023-07-18 19:20:04.332113
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=123456789&format=jsonv2
+
+Response code: 200
+Response text: [{"place_id":74759633,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"node","osm_id":7123711681,"boundingbox":["41.7155979","41.7156979","44.7465134","44.7466134"],"lat":"41.7156479","lon":"44.7465634","display_name":"123456789, ჭაბუა ამირეჯიბის გზატკეცილი, საბურთალოს რაიონი, თბილისი, 1062, საქართველო","place_rank":30,"category":"highway","type":"bus_stop","importance":0.11000999999999997,"icon":"https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png"}]
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:04 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_name[test_data6] (call)
+Time: 2023-07-18 19:20:04.793013
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/search.php?q=000000000000&format=jsonv2
+
+Response code: 200
+Response text: []
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:05 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates0] (call)
+Time: 2023-07-18 19:20:05.291982
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=59.99357575&lon=30.3362719762346&format=jsonv2
+
+Response code: 200
+Response text: {"place_id":118583399,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"way","osm_id":38117534,"lat":"59.99406625937128","lon":"30.33659076165508","place_rank":27,"category":"highway","type":"footway","importance":0.07500999999999991,"addresstype":"road","name":"аллея Кайгородова","display_name":"аллея Кайгородова, Лесной, округ Светлановское, Санкт-Петербург, Северо-Западный федеральный округ, 194153, Россия","address":{"road":"аллея Кайгородова","suburb":"Лесной","city_district":"округ Светлановское","city":"Санкт-Петербург","ISO3166-2-lvl15":"RU-SPE","state":"Санкт-Петербург","ISO3166-2-lvl4":"RU-SPE","region":"Северо-Западный федеральный округ","postcode":"194153","country":"Россия","country_code":"ru"},"boundingbox":["59.9928004","59.9946769","30.3350941","30.3419394"]}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:05 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates1] (call)
+Time: 2023-07-18 19:20:05.802398
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=59.95330165&lon=30.314422577473174&format=jsonv2
+
+Response code: 200
+Response text: {"place_id":308209810,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"relation","osm_id":3243635,"lat":"59.95288135","lon":"30.313973924434514","place_rank":30,"category":"building","type":"yes","importance":9.99999999995449e-6,"addresstype":"building","name":null,"display_name":"7 литБ, Александровский парк, Петроградская сторона, округ Кронверкское, Санкт-Петербург, Северо-Западный федеральный округ, 197101, Россия","address":{"house_number":"7 литБ","neighbourhood":"Александровский парк","suburb":"Петроградская сторона","city_district":"округ Кронверкское","city":"Санкт-Петербург","ISO3166-2-lvl15":"RU-SPE","state":"Санкт-Петербург","ISO3166-2-lvl4":"RU-SPE","region":"Северо-Западный федеральный округ","postcode":"197101","country":"Россия","country_code":"ru"},"boundingbox":["59.9526269","59.9531378","30.3134174","30.3160169"]}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:06 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates2] (call)
+Time: 2023-07-18 19:20:06.301425
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=54.963702049999995&lon=20.489817549516772&format=jsonv2
+
+Response code: 200
+Response text: {"place_id":71296847,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright","osm_type":"node","osm_id":6766974876,"lat":"54.9636645","lon":"20.4904066","place_rank":30,"category":"tourism","type":"artwork","importance":9.99999999995449e-6,"addresstype":"tourism","name":"Мухоморы","display_name":"Мухоморы, Московская улица, Зеленоградск, Зеленоградский муниципальный округ, Калининградская область, Северо-Западный федеральный округ, 238530, Россия","address":{"tourism":"Мухоморы","road":"Московская улица","town":"Зеленоградск","county":"Зеленоградский муниципальный округ","state":"Калининградская область","ISO3166-2-lvl4":"RU-KGD","region":"Северо-Западный федеральный округ","postcode":"238530","country":"Россия","country_code":"ru"},"boundingbox":["54.9636145","54.9637145","20.4903566","20.4904566"]}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:06 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates3] (call)
+Time: 2023-07-18 19:20:06.786618
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=10000000000&lon=20000000000&format=jsonv2
+
+Response code: 200
+Response text: {"error":"Unable to geocode"}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:07 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates4] (call)
+Time: 2023-07-18 19:20:07.269458
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=kkkkkkkkkkkkk&lon=kkkkkkkkkkkkk&format=jsonv2
+
+Response code: 400
+Response text: {"error":{"code":400,"message":"Floating-point number expected for parameter 'lat'"}}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:07 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
+
+-----
+Test: tests/test_nominatim.py::test_check_from_coordinates[test_data_coordinates5] (call)
+Time: 2023-07-18 19:20:07.771195
+Request method: GET
+Request URL: https://nominatim.openstreetmap.org/reverse.php?lat=&lon=&format=jsonv2
+
+Response code: 400
+Response text: {"error":{"code":400,"message":"Floating-point number expected for parameter 'lat'"}}
+Response headers: {'Server': 'nginx', 'Date': 'Tue, 18 Jul 2023 16:20:08 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=20', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'OPTIONS,GET'}
+Response cookies: {}
+
+-----
