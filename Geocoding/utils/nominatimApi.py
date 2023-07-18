@@ -13,9 +13,21 @@ class NominatimApi:
         result = requests.get(url, headers=self.headers, cookies=self.cookie)
         result.encoding = 'utf-8'
         result_check_info_responce = result.json()
-        print('Status code: ' + str(result.status_code))
-        assert 200 == result.status_code
-        print(f'Полный ответ из запроса по имени: {result_check_info_responce}')
+
+        if result.status_code == 200:
+            print('Status code: 200 OK')
+        else:
+            print(f'STATUS CODE: {str(result.status_code)}')
+
+        if not result_check_info_responce:
+            print("NO SEARCH RESULTS FOUND")
+        elif result_check_info_responce == {"error": "Unable to geocode"}:
+            print("ERROR-MESSAGE:Unable to geocode")
+        elif result_check_info_responce == {"error": {"code": 400, "message":"Floating-point number expected for "
+                                                                             "parameter 'lat'"}}:
+            print("ERROR-MESSAGE:Floating-point number expected for parameter 'lat'")
+        else:
+            print(f'Полный ответ из запроса по имени: {result_check_info_responce}')
 
         return result_check_info_responce
 
@@ -23,10 +35,8 @@ class NominatimApi:
 
     # @staticmethod  # чтобы не привязываться к конкретному классу
     def search(self, query):
-        filename = 'search.php?'
-        search_url = NominatimApi.base_url + filename + str(query) + NominatimApi.format_json
+        search_url = NominatimApi.base_url + 'search.php?' + str(query) + NominatimApi.format_json
         print(f'URL, который ищем:{search_url}')
-
         result = self.get_request(url=search_url)
         return result
 
@@ -35,11 +45,9 @@ class NominatimApi:
     """Метод обратного нахождения по координатам"""
 
     def reverse(self, query1, query2):
-        filename = 'reverse.php?'
-        reverse_url = NominatimApi.base_url + filename + 'lat=' + str(query1) + '&lon=' + str(query2) + \
+        reverse_url = NominatimApi.base_url + 'reverse.php?lat=' + str(query1) + '&lon=' + str(query2) + \
                       NominatimApi.format_json
         print(f'URL, который ищем:{reverse_url}')
-
         result = self.get_request(url=reverse_url)
         return result
 
