@@ -1,17 +1,17 @@
-def add(a, b):
-    return  a + b
-
-print(add(4, 8))
-
-x = 19
-y = 23
-s = add(x, y)
-print(s)  # 42
-
-def say_hello():
-    print("Hello!")
-
-say_hello()
+# def add(a, b):
+#     return  a + b
+#
+# print(add(4, 8))
+#
+# x = 19
+# y = 23
+# s = add(x, y)
+# print(s)  # 42
+#
+# def say_hello():
+#     print("Hello!")
+#
+# say_hello()
 
 
 # """В переменную word введите слово.
@@ -21,7 +21,9 @@ say_hello()
 #
 # word = input("Enter word: ")
 # n = int(input("Enter index:"))
-# if n in word:
+# # for n, x in enumerate(word):
+# #     print(n, x)
+# if word.index(n):
 #     print(word[n])
 # else:
 #     print("Index is not valid")
@@ -60,3 +62,4 @@ say_hello()
 #     print("Get better!")
 # else:
 #     print("Cool!")
+
