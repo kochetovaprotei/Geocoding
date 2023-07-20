@@ -184,3 +184,115 @@ def reverse_string(text):
 
 reverse_string('go!')  # => '!og'
 
+
+"""Реализуйте функцию-предикат is_arguments_for_substr_correct(), которая принимает три аргумента:
+
+    строку;
+    индекс, с которого начинать извлечение;
+    длину извлекаемой подстроки.
+
+Функция возвращает False, если хотя бы одно из условий истинно:
+
+    Отрицательная длина извлекаемой подстроки.
+    Отрицательный заданный индекс.
+    Заданный индекс выходит за границу всей строки.
+    Длина подстроки в сумме с заданным индексом выходит за границу всей строки.
+
+В ином случае функция возвращает True."""
+def is_arguments_for_substr_correct(string, start_index, length_substr):
+    if length_substr < 0:
+        return False
+    elif start_index < 0:
+        return False
+    elif start_index > len(string) - 1:
+        return False
+    elif (length_substr + start_index) > len(string):
+        return False
+    else:
+        return True
+
+
+"""Реализуйте функцию filter_string(), принимающую на вход строку и символ, и возвращающую новую строку, в которой 
+удален переданный символ во всех его позициях."""
+
+def filter_string(string, symbol):
+    i = 0
+    result = ""
+    while i < len(string):
+        if string[i] != symbol:
+            result = result + string[i]
+        i = i + 1
+    return result
+
+# text = 'If I look back I am lost'
+# filter_string(text, 'I')  # 'f  look back  am lost'
+
+"""Рассмотрим алгоритм проверки простоты числа. Будем делить искомое число x на все числа из диапазона 
+от двух до x - 1 и смотреть остаток. Если в этом диапазоне не найден делитель, который делит число x без остатка,
+ значит, перед нами простое число."""
+
+def is_prime(number):
+    if number < 2:
+        return False
+
+    divider = 2
+
+    while divider <= number / 2:
+        if number % divider == 0:
+            return False
+
+        divider += 1
+
+    return True
+
+print(is_prime(1))  # => False
+
+
+"""Реализуйте функцию is_contains_char(), которая проверяет с учётом регистра, содержит ли строка указанную букву"""
+
+def is_contains_char(string, letter):
+    i = 0
+    while i < len(string):
+        if string[i] == letter:
+            return True
+        i = i + 1
+    return False
+
+print(is_contains_char('Hexlet', 'H'))  # => True
+print(is_contains_char('Hexlet', 'h'))  # => False
+
+
+
+"""Посмотрим, как реализовать функцию переворота строки через цикл for:"""
+
+# text - произвольный текст
+# char - символ, который нужно учитывать
+def chars_count(text, char):
+    # Так как ищем сумму, то начальное значение 0
+    result = 0
+    for current_char in text:
+        # приводим все к нижнему регистру,
+        # чтобы не зависеть от текущего регистра
+        if current_char.lower() == char.lower():
+            result += 1
+    return result
+
+
+chars_count('hexlet!', 'e')  # 2
+chars_count('hExlet!', 'e')  # 2
+
+
+"""принимает на вход строку и символ и возвращает новую строку, в которой удалён 
+переданный символ во всех его позициях. """
+
+def filter_string(string, symbol):
+    # Начальное значение
+    result = ''
+    for current_symbol in string:
+        if current_symbol.lower() != symbol.lower():
+            result = result + current_symbol
+    return result
+
+text = 'If I look forward I win'
+filter_string(text, 'i')  # 'f  look forward  wn'
+filter_string(text, 'O')  # 'If I lk frward I win'
