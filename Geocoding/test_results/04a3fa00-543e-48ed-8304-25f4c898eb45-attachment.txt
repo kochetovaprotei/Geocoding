@@ -1,0 +1,5 @@
+
+address - 
+URL, который ищем:https://nominatim.openstreetmap.org/reverse.php?lat=&lon=&format=jsonv2
+STATUS CODE: 400
+ERROR-MESSAGE:Floating-point number expected for parameter 'lat'

@@ -1,11 +1,11 @@
 from utils.utils_for_file import data_file
 from utils.nominatimApi import NominatimApi
 import pytest
-# import allure
+import allure
 
 """Тест прямого кодирования"""
 
-# @allure.description("test_check_from_name")
+@allure.description("test_check_from_name")
 @pytest.mark.parametrize("test_data", data_file(file_path="utils/data_for_searching_by_name.json"))
 def test_check_from_name(test_data):
 
@@ -23,7 +23,7 @@ def test_check_from_name(test_data):
 
 """Тест обратного кодирования"""
 
-# @allure.description("test_check_from_coordinates")
+@allure.description("test_check_from_coordinates")
 @pytest.mark.parametrize("test_data_coordinates", data_file(file_path="utils/data_for_searching_by_coordinates.json"))
 def test_check_from_coordinates(test_data_coordinates):
 

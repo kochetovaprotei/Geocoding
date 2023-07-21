@@ -1,0 +1,9 @@
+
+latitude - 41.7156479
+
+longitude - 44.7465634
+URL, который ищем:https://nominatim.openstreetmap.org/search.php?q=123456789&format=jsonv2
+Status code: 200 OK
+Полный ответ из запроса по имени: [{'place_id': 74759633, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright', 'osm_type': 'node', 'osm_id': 7123711681, 'boundingbox': ['41.7155979', '41.7156979', '44.7465134', '44.7466134'], 'lat': '41.7156479', 'lon': '44.7465634', 'display_name': '123456789, ჭაბუა ამირეჯიბის გზატკეცილი, საბურთალოს რაიონი, თბილისი, 1062, საქართველო', 'place_rank': 30, 'category': 'highway', 'type': 'bus_stop', 'importance': 0.11000999999999997, 'icon': 'https://nominatim.openstreetmap.org/ui/mapicons/transport_bus_stop2.p.20.png'}]
+Совпала ширина
+Совпала долгота

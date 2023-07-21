@@ -1,0 +1,9 @@
+
+latitude - 59.99357575
+
+longitude - 30.3362719762346
+URL, который ищем:https://nominatim.openstreetmap.org/search.php?q=иорданский+пруд&format=jsonv2
+Status code: 200 OK
+Полный ответ из запроса по имени: [{'place_id': 115660083, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright', 'osm_type': 'way', 'osm_id': 37912151, 'boundingbox': ['59.9933853', '59.9937697', '30.3359822', '30.3366277'], 'lat': '59.99357575', 'lon': '30.3362719762346', 'display_name': 'Иорданский пруд, Лесной, округ Светлановское, Санкт-Петербург, Северо-Западный федеральный округ, Россия', 'place_rank': 22, 'category': 'natural', 'type': 'water', 'importance': 0.4000099999999999}]
+Совпала ширина
+Совпала долгота

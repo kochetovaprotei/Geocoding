@@ -1,0 +1,7 @@
+
+latitude - 41.7156479
+
+longitude - 44.7465634
+URL, который ищем:https://nominatim.openstreetmap.org/search.php?q=000000000000&format=jsonv2
+Status code: 200 OK
+NO SEARCH RESULTS FOUND

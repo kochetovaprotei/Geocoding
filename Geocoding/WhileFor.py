@@ -296,3 +296,34 @@ def filter_string(string, symbol):
 text = 'If I look forward I win'
 filter_string(text, 'i')  # 'f  look forward  wn'
 filter_string(text, 'O')  # 'If I lk frward I win'
+
+
+def expression_matter(a, b, c):
+    m1 = a*(b+c)
+    m2 = a*b*c
+    m3 = a+b*c
+    m4 = (a+b)*c
+    m5 = a+b+c
+    large = m1
+    if m2 > large:
+        large = m2
+    if m3 > large:
+        large = m3
+    if m4 > large:
+        large = m4
+    if m5 > large:
+        large = m5
+    return large
+
+def discover_original_price(discounted_price, sale_percentage):
+    #your code here
+    return round(((discounted_price * 100 / (100 - sale_percentage))), 2)
+
+def two_decimal_places(n):
+    return round(n, 2)
+    raise NotImplementedError("TODO: two_decimal_places")
+
+
+def two_decimal_places(number):
+    return(int(number * 100) / 100.0)
+    raise NotImplementedError("TODO: two_decimal_places")
