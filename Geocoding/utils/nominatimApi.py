@@ -1,6 +1,8 @@
 import allure
 import requests
 from utils.logger import Logger
+from utils.allure_logging import http_log
+import logging
 
 
 class NominatimApi:
@@ -18,6 +20,7 @@ class NominatimApi:
             Logger.add_response(result)
             result.encoding = 'utf-8'
             result_check_info_response = result.json()
+            allure.attach("name", "content")
 
             if result.status_code == 200:
                 print('Status code: 200 OK')
@@ -36,11 +39,8 @@ class NominatimApi:
                 raise Exception('200 NO SEARCH RESULTS FOUND')
             elif result_check_info_response == {"error": "Unable to geocode"}:
                 raise Exception("200 ERROR-MESSAGE:Unable to geocode")
-            elif result_check_info_response == {"error": {"code": 400, "message": "Floating-point number expected for "
-                                                                                  "parameter 'lat'"}}:
-                raise Exception("ERROR-MESSAGE:Floating-point number expected for parameter 'lat'")
-            else:
-                print(f'Полный ответ из запроса по имени: {result_check_info_response}')
+
+            http_log.info(f'Полный ответ из запроса по имени: {result_check_info_response}')
 
             return result_check_info_response
 
@@ -52,8 +52,6 @@ class NominatimApi:
         result = self.get_request(url=search_url)
         return result
 
-    # NominatimApi.search(query='q=иорданский+пруд')
-
     """Метод обратного нахождения по координатам"""
 
     def reverse(self, query1, query2):
@@ -62,5 +60,3 @@ class NominatimApi:
         print(f'URL, который ищем:{reverse_url}')
         result = self.get_request(url=reverse_url)
         return result
-
-# NominatimApi.reverse(query1='59.99357575', query2='30.3362719762346')
