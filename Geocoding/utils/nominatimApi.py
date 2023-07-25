@@ -2,7 +2,6 @@ import allure
 import requests
 from utils.logger import Logger
 from utils.allure_logging import http_log
-import logging
 
 
 class NominatimApi:

@@ -1,5 +1,3 @@
-import allure
-import pytest
 import logging
 import datetime
 
