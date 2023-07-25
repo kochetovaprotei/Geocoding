@@ -8,55 +8,57 @@ import logging
 class NominatimApi:
     headers = {'Content-Type': 'application/json'}
     cookie = ""
-    base_url = 'https://nominatim.openstreetmap.org/'
-    format_json = '&format=jsonv2'
+    base_url = "https://nominatim.openstreetmap.org/"
+    format_json = "&format=jsonv2"
 
     """Метод отправки запроса"""
 
-    def get_request(self, url):
-        with allure.step("GET"):
-            Logger.add_request(url, method="GET")
-            result = requests.get(url, headers=self.headers, cookies=self.cookie)
-            Logger.add_response(result)
-            result.encoding = 'utf-8'
-            result_check_info_response = result.json()
-            allure.attach("name", "content")
+    @classmethod
+    def get_request(cls, url):
+        Logger.add_request(url, method="GET")
+        with allure.step("Отправить запрос с тестовыми данными"):
+            result = requests.get(url, headers=cls.headers, cookies=cls.cookie)
+        Logger.add_response(result)
+        result.encoding = 'utf-8'
+        result_check_info_response = result.json()
+        # allure.attach("name", "content")
 
-            if result.status_code == 200:
-                print('Status code: 200 OK')
-            elif result.status_code == 400:
-                raise Exception("400 Bad Request")
-            elif result.status_code == 404:
-                raise Exception("404 Not found")
-            elif result.status_code == 500:
-                raise Exception('500 Internal Server Error')
-            elif result.status_code == 502:
-                raise Exception('502 Bad Gateway')
-            elif result.status_code == 408:
-                raise Exception('408 Request Timeout')
+        with allure.step("Проверить статус-код 200"):
+            with allure.step("Проверить, есть ли ошибки при успешном статус-коде"):
+                if result.status_code == 200:
+                    http_log.info(f"Status code: {result.status_code}")
+                    if not result_check_info_response:
+                        raise Exception("200 ERROR:NO SEARCH RESULTS FOUND")
+                    elif result_check_info_response == {"error": "Unable to geocode"}:
+                        raise Exception("200 ERROR:Unable to geocode")
+                elif result.status_code == 400:
+                    raise Exception("400 Bad Request")
+                elif result.status_code == 404:
+                    raise Exception("404 Not found")
+                elif result.status_code == 500:
+                    raise Exception("500 Internal Server Error")
+                elif result.status_code == 502:
+                    raise Exception("502 Bad Gateway")
+                elif result.status_code == 408:
+                    raise Exception("408 Request Timeout")
+        http_log.info(f"Полный ответ запроса:\n{result_check_info_response}")
 
-            if not result_check_info_response:
-                raise Exception('200 NO SEARCH RESULTS FOUND')
-            elif result_check_info_response == {"error": "Unable to geocode"}:
-                raise Exception("200 ERROR-MESSAGE:Unable to geocode")
-
-            http_log.info(f'Полный ответ из запроса по имени: {result_check_info_response}')
-
-            return result_check_info_response
+        return result_check_info_response
 
     """Метод прямого нахождения по имени"""
 
-    def search(self, query):
-        search_url = NominatimApi.base_url + 'search.php?' + str(query) + NominatimApi.format_json
-        print(f'URL, который ищем:{search_url}')
-        result = self.get_request(url=search_url)
+    @classmethod
+    def search(cls, query):
+        search_url = f"{cls.base_url}search.php?{str(query)}{cls.format_json}"
+        http_log.info(f"URL запроса по имени:\n{search_url}")
+        result = cls.get_request(url=search_url)
         return result
 
     """Метод обратного нахождения по координатам"""
 
-    def reverse(self, query1, query2):
-        reverse_url = NominatimApi.base_url + 'reverse.php?lat=' + str(query1) + '&lon=' + str(query2) + \
-                      NominatimApi.format_json
-        print(f'URL, который ищем:{reverse_url}')
-        result = self.get_request(url=reverse_url)
+    @classmethod
+    def reverse(cls, query1, query2):
+        reverse_url = f"{cls.base_url}reverse.php?lat={str(query1)}&lon={str(query2)}{cls.format_json}"
+        http_log.info(f"URL запроса по координатам:\n{reverse_url}")
+        result = cls.get_request(url=reverse_url)
         return result
