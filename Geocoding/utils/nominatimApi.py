@@ -20,7 +20,6 @@ class NominatimApi:
         Logger.add_response(result)
         result.encoding = 'utf-8'
         result_response = result.json()
-        # allure.attach("name", "content")
 
         with allure.step("Проверить статус-код 200"):
             with allure.step("Проверить, есть ли ошибки при успешном статус-коде"):
