@@ -1,4 +1,0 @@
-*.log
-.pytest_cache
-allure
-allure-report
