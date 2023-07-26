@@ -1,5 +1,0 @@
-
-address - 
-URL, который ищем:https://nominatim.openstreetmap.org/reverse.php?lat=10000000000&lon=20000000000&format=jsonv2
-Status code: 200 OK
-ERROR-MESSAGE:Unable to geocode

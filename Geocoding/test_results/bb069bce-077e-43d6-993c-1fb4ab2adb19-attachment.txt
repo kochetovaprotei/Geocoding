@@ -1,9 +1,0 @@
-
-latitude - 59.95330165
-
-longitude - 30.314422577473174
-URL, который ищем:https://nominatim.openstreetmap.org/search.php?q=артиллерийский+остров&format=jsonv2
-Status code: 200 OK
-Полный ответ из запроса по имени: [{'place_id': 308161542, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright', 'osm_type': 'relation', 'osm_id': 3297995, 'boundingbox': ['59.9517552', '59.9553979', '30.3097024', '30.318388'], 'lat': '59.95330165', 'lon': '30.314422577473174', 'display_name': 'Артиллерийский остров, Петроградская сторона, округ Кронверкское, Санкт-Петербург, Северо-Западный федеральный округ, Россия', 'place_rank': 17, 'category': 'place', 'type': 'island', 'importance': 0.49999782720980435}]
-Совпала ширина
-Совпала долгота

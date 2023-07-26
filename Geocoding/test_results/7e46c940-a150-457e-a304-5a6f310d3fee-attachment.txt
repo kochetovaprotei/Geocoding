@@ -1,9 +1,0 @@
-
-latitude - 54.963702049999995
-
-longitude - 20.489817549516772
-URL, который ищем:https://nominatim.openstreetmap.org/search.php?q=тортилин+пруд&format=jsonv2
-Status code: 200 OK
-Полный ответ из запроса по имени: [{'place_id': 134229134, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright', 'osm_type': 'way', 'osm_id': 115643407, 'boundingbox': ['54.962689', '54.9647197', '20.4891399', '20.492278'], 'lat': '54.963702049999995', 'lon': '20.489817549516772', 'display_name': 'Тортилин пруд, Зеленоградск, Зеленоградский муниципальный округ, Калининградская область, Северо-Западный федеральный округ, 238530, Россия', 'place_rank': 22, 'category': 'natural', 'type': 'water', 'importance': 0.4000099999999999}]
-Совпала ширина
-Совпала долгота
