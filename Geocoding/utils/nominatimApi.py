@@ -10,7 +10,7 @@ class NominatimApi:
     base_url = "https://nominatim.openstreetmap.org/"
     format_json = "&format=jsonv2"
 
-    """Метод отправки запроса"""
+    """Отправка запроса, проверки на статус-код"""
 
     @classmethod
     def get_request(cls, url):
@@ -19,16 +19,16 @@ class NominatimApi:
             result = requests.get(url, headers=cls.headers, cookies=cls.cookie)
         Logger.add_response(result)
         result.encoding = 'utf-8'
-        result_check_info_response = result.json()
+        result_response = result.json()
         # allure.attach("name", "content")
 
         with allure.step("Проверить статус-код 200"):
             with allure.step("Проверить, есть ли ошибки при успешном статус-коде"):
                 if result.status_code == 200:
                     http_log.info(f"Status code: {result.status_code}")
-                    if not result_check_info_response:
+                    if not result_response:
                         raise Exception("200 ERROR:NO SEARCH RESULTS FOUND")
-                    elif result_check_info_response == {"error": "Unable to geocode"}:
+                    elif result_response == {"error": "Unable to geocode"}:
                         raise Exception("200 ERROR:Unable to geocode")
                 elif result.status_code == 400:
                     raise Exception("400 Bad Request")
@@ -40,11 +40,11 @@ class NominatimApi:
                     raise Exception("502 Bad Gateway")
                 elif result.status_code == 408:
                     raise Exception("408 Request Timeout")
-        http_log.info(f"Полный ответ запроса:\n{result_check_info_response}")
+        http_log.info(f"Полный ответ запроса:\n{result_response}")
 
-        return result_check_info_response
+        return result_response
 
-    """Метод прямого нахождения по имени"""
+    """Отправка запроса search по имени"""
 
     @classmethod
     def search(cls, query):
@@ -53,7 +53,7 @@ class NominatimApi:
         result = cls.get_request(url=search_url)
         return result
 
-    """Метод обратного нахождения по координатам"""
+    """Отправка запроса reverse по координатам"""
 
     @classmethod
     def reverse(cls, query1, query2):
